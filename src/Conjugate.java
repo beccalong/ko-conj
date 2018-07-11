@@ -5,6 +5,14 @@ public class Conjugate {
 	public static void main (String[] args) {
 		if (args.length == 1) {
 			
+			for (char c : args[0].toCharArray()) {
+				if (Character.UnicodeScript.of(c) != Character.UnicodeScript.HANGUL) {
+					throw new IllegalArgumentException("The argument is not a Korean word");
+				}
+			}
+			if (!args[0].endsWith("다")) {
+				throw new IllegalArgumentException("The argument is not a verb/adjective (should end with 다)");
+			}
 			Dict dict = new Dict();
 			ArrayList<VerbEntry> entries = dict.get(args[0]);
 			
@@ -23,6 +31,37 @@ public class Conjugate {
 			
 		} else if (args.length == 8) {
 			
+			for (char c : args[0].toCharArray()) {
+				if (Character.UnicodeScript.of(c) != Character.UnicodeScript.HANGUL) {
+					throw new IllegalArgumentException("The first argument is not a Korean word");
+				}
+			}
+			if (!args[0].endsWith("다")) {
+				throw new IllegalArgumentException("The first argument is not a verb/adjective (should end with 다)");
+			}
+			if (!args[1].equals("A") && !args[1].equals("V")) {
+				System.out.println(args[1]);
+				throw new IllegalArgumentException("The second argument must be \"A\" (adjective) or \"V\" (verb)");
+			}
+			if (!args[2].equals("true") && !args[2].equals("false")) {
+				throw new IllegalArgumentException("The third argument must be \"true\" or \"false\"");
+			}
+			if (!args[3].equals("true") && !args[3].equals("false")) {
+				throw new IllegalArgumentException("The 4th argument must be \"true\" or \"false\"");
+			}
+			if (!args[4].equals("true") && !args[4].equals("false")) {
+				throw new IllegalArgumentException("The 5th argument must be \"true\" or \"false\"");
+			}
+			if (!args[5].equals("true") && !args[5].equals("false")) {
+				throw new IllegalArgumentException("The 6th argument must be \"true\" or \"false\"");
+			}
+			if (!args[6].equals("true") && !args[6].equals("false")) {
+				throw new IllegalArgumentException("The 7th argument must be \"true\" or \"false\"");
+			}
+			if (!args[7].equals("true") && !args[7].equals("false")) {
+				throw new IllegalArgumentException("The 8th argument must be \"true\" or \"false\"");
+			}
+			
 			Forms forms = conjugate(args[0], args[1], args[2].equals("true"), args[3].equals("true"), 
 					args[4].equals("true"), args[5].equals("true"), args[6].equals("true"), 
 					args[7].equals("true"));
@@ -30,7 +69,7 @@ public class Conjugate {
 			
 		} else {
 			
-			System.out.println("Error: wrong number of arguments");
+			throw new IllegalArgumentException("Wrong number of arguments");
 		}
 	}
 	
