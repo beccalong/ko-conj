@@ -19,7 +19,7 @@ for example,
 ### Parameters
 
 You can check the parameters for a word by checking the Wiktionary
-1. Search the wikitionary for the word you're looking for, such as [하다](https://en.wiktionary.org/wiki/%ED%95%98%EB%8B%A4)
+1. Search the wiktionary for the word you're looking for, such as [하다](https://en.wiktionary.org/wiki/%ED%95%98%EB%8B%A4)
 2. Next to "Conjugation", click the "edit" button
 3. Find the part that says `{{ko-conj/verb}}` or `{{ko-conj/adj}}`
 4. If nothing else is listed the word is regular and you should use the default parameters  
