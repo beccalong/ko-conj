@@ -11,19 +11,25 @@ public class Conjugate {
 			if (entries != null) {
 								
 				for (VerbEntry v : entries) {
+					
 					Forms forms = conjugate(args[0], v.getFunction(), v.isIrreg(), v.isReg(), v.isHortative(), 
 							v.isImperative(), v.isHonimperative(), v.isHonorific());
 					System.out.println(v.getFullPos().toUpperCase() + forms.toString());
 				}
 			} else {
+				
 				System.out.println("Error: Word is not in the dictionary");
 			}
 			
 		} else if (args.length == 8) {
-			conjugate(args[0], args[1], args[2].equals("true"), args[3].equals("true"), 
+			
+			Forms forms = conjugate(args[0], args[1], args[2].equals("true"), args[3].equals("true"), 
 					args[4].equals("true"), args[5].equals("true"), args[6].equals("true"), 
 					args[7].equals("true"));
+			System.out.println(forms.toString());
+			
 		} else {
+			
 			System.out.println("Error: wrong number of arguments");
 		}
 	}
