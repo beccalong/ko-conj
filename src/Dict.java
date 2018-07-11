@@ -6,6 +6,9 @@ public class Dict {
 	private HashMap<String, VerbEntry> verbDict;
 	private HashMap<String, VerbEntry> adjDict;
 	
+	/**
+	 * Reads in an instance of the Korean wiktionary data
+	 */
 	public Dict() {
 		
 		verbDict = new HashMap<String, VerbEntry>();
@@ -60,6 +63,12 @@ public class Dict {
 		}
 	}
 	
+	/**
+	 * @param word a Korean infinitive
+	 * @return an ArrayList of VerbEntry for this word from the dictionary
+	 * (Most words will only have one dictionary entry, but there are cases
+	 * of words being both a verb and adjective)
+	 */
 	public ArrayList<VerbEntry> get(String word) {
 		
 		ArrayList<VerbEntry> entry = new ArrayList<VerbEntry>();
