@@ -1,6 +1,6 @@
 # ko-conj
 
-The Wikitonary module ko-conj (a Korean verb and adjective conjugator) ported into Java.
+The Wikitonary module [ko-conj](https://en.wiktionary.org/wiki/Module:ko-conj) (a Korean verb and adjective conjugator) ported into Java.
 
 ## How to conjugate a word
 1. Download and compile code.
